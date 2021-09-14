@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数据表格 | BoxUI</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="基于element-ui二次封装,让数据驱动视图,更加贴合企业开发">
+    
+    <link rel="preload" href="/box-ui/assets/css/0.styles.06c0026d.css" as="style"><link rel="preload" href="/box-ui/assets/js/app.46ac42d8.js" as="script"><link rel="preload" href="/box-ui/assets/js/6.77e9e98c.js" as="script"><link rel="preload" href="/box-ui/assets/js/17.1fc873d6.js" as="script"><link rel="prefetch" href="/box-ui/assets/js/1.50b4a83c.js"><link rel="prefetch" href="/box-ui/assets/js/10.0981690b.js"><link rel="prefetch" href="/box-ui/assets/js/100.d53e762f.js"><link rel="prefetch" href="/box-ui/assets/js/101.85b640a4.js"><link rel="prefetch" href="/box-ui/assets/js/11.519bc4c3.js"><link rel="prefetch" href="/box-ui/assets/js/12.a635f2ba.js"><link rel="prefetch" href="/box-ui/assets/js/13.8d07e153.js"><link rel="prefetch" href="/box-ui/assets/js/14.293cfec8.js"><link rel="prefetch" href="/box-ui/assets/js/15.676090b4.js"><link rel="prefetch" href="/box-ui/assets/js/16.85a3078f.js"><link rel="prefetch" href="/box-ui/assets/js/18.d244dcf7.js"><link rel="prefetch" href="/box-ui/assets/js/19.505f41db.js"><link rel="prefetch" href="/box-ui/assets/js/2.996aa607.js"><link rel="prefetch" href="/box-ui/assets/js/20.89de28b1.js"><link rel="prefetch" href="/box-ui/assets/js/21.e4395d0d.js"><link rel="prefetch" href="/box-ui/assets/js/22.7f2d192b.js"><link rel="prefetch" href="/box-ui/assets/js/23.93581e85.js"><link rel="prefetch" href="/box-ui/assets/js/24.8a9751bd.js"><link rel="prefetch" href="/box-ui/assets/js/25.3efc6f99.js"><link rel="prefetch" href="/box-ui/assets/js/26.565ba660.js"><link rel="prefetch" href="/box-ui/assets/js/27.c06566cc.js"><link rel="prefetch" href="/box-ui/assets/js/28.3ccb81b0.js"><link rel="prefetch" href="/box-ui/assets/js/29.9a181e73.js"><link rel="prefetch" href="/box-ui/assets/js/3.bf7de2ed.js"><link rel="prefetch" href="/box-ui/assets/js/30.e83503e9.js"><link rel="prefetch" href="/box-ui/assets/js/31.13e7b9c4.js"><link rel="prefetch" href="/box-ui/assets/js/32.e39ce5e2.js"><link rel="prefetch" href="/box-ui/assets/js/33.c4d1f908.js"><link rel="prefetch" href="/box-ui/assets/js/34.63267a09.js"><link rel="prefetch" href="/box-ui/assets/js/35.7ae2d461.js"><link rel="prefetch" href="/box-ui/assets/js/36.ea4db797.js"><link rel="prefetch" href="/box-ui/assets/js/37.dc3e58e2.js"><link rel="prefetch" href="/box-ui/assets/js/38.ada1f421.js"><link rel="prefetch" href="/box-ui/assets/js/39.228b4eea.js"><link rel="prefetch" href="/box-ui/assets/js/40.8d3f31b3.js"><link rel="prefetch" href="/box-ui/assets/js/41.0183322f.js"><link rel="prefetch" href="/box-ui/assets/js/42.e84807fe.js"><link rel="prefetch" href="/box-ui/assets/js/43.ceeb4fac.js"><link rel="prefetch" href="/box-ui/assets/js/44.bb86889b.js"><link rel="prefetch" href="/box-ui/assets/js/45.74573d88.js"><link rel="prefetch" href="/box-ui/assets/js/46.c5ee4318.js"><link rel="prefetch" href="/box-ui/assets/js/47.a9ad8952.js"><link rel="prefetch" href="/box-ui/assets/js/48.4e025762.js"><link rel="prefetch" href="/box-ui/assets/js/49.8ffee699.js"><link rel="prefetch" href="/box-ui/assets/js/5.419ada65.js"><link rel="prefetch" href="/box-ui/assets/js/50.138e4041.js"><link rel="prefetch" href="/box-ui/assets/js/51.80523ca1.js"><link rel="prefetch" href="/box-ui/assets/js/52.6646e998.js"><link rel="prefetch" href="/box-ui/assets/js/53.9d82b2f4.js"><link rel="prefetch" href="/box-ui/assets/js/54.17094b74.js"><link rel="prefetch" href="/box-ui/assets/js/55.85b617bf.js"><link rel="prefetch" href="/box-ui/assets/js/56.86bfcc98.js"><link rel="prefetch" href="/box-ui/assets/js/57.c27187cf.js"><link rel="prefetch" href="/box-ui/assets/js/58.1095b06d.js"><link rel="prefetch" href="/box-ui/assets/js/59.b4962a22.js"><link rel="prefetch" href="/box-ui/assets/js/60.12ee064d.js"><link rel="prefetch" href="/box-ui/assets/js/61.d46dc380.js"><link rel="prefetch" href="/box-ui/assets/js/62.d19a37f7.js"><link rel="prefetch" href="/box-ui/assets/js/63.dc53c1d0.js"><link rel="prefetch" href="/box-ui/assets/js/64.0b85d817.js"><link rel="prefetch" href="/box-ui/assets/js/65.49b6aad2.js"><link rel="prefetch" href="/box-ui/assets/js/66.2e7a2006.js"><link rel="prefetch" href="/box-ui/assets/js/67.b34eaa88.js"><link rel="prefetch" href="/box-ui/assets/js/68.84ae30d8.js"><link rel="prefetch" href="/box-ui/assets/js/69.f3e65d99.js"><link rel="prefetch" href="/box-ui/assets/js/7.358056c8.js"><link rel="prefetch" href="/box-ui/assets/js/70.cb3fb3a1.js"><link rel="prefetch" href="/box-ui/assets/js/71.d1fdf2ab.js"><link rel="prefetch" href="/box-ui/assets/js/72.98aeb58a.js"><link rel="prefetch" href="/box-ui/assets/js/73.8c57c239.js"><link rel="prefetch" href="/box-ui/assets/js/74.76b4e04b.js"><link rel="prefetch" href="/box-ui/assets/js/75.00040f23.js"><link rel="prefetch" href="/box-ui/assets/js/76.4116b085.js"><link rel="prefetch" href="/box-ui/assets/js/77.dd273853.js"><link rel="prefetch" href="/box-ui/assets/js/78.bdc3f9f8.js"><link rel="prefetch" href="/box-ui/assets/js/79.f134430a.js"><link rel="prefetch" href="/box-ui/assets/js/8.3bd8e661.js"><link rel="prefetch" href="/box-ui/assets/js/80.8e63c71b.js"><link rel="prefetch" href="/box-ui/assets/js/81.12823fd9.js"><link rel="prefetch" href="/box-ui/assets/js/82.805bdfa4.js"><link rel="prefetch" href="/box-ui/assets/js/83.a3eaba9a.js"><link rel="prefetch" href="/box-ui/assets/js/84.9e0d6655.js"><link rel="prefetch" href="/box-ui/assets/js/85.382665f4.js"><link rel="prefetch" href="/box-ui/assets/js/86.55967a53.js"><link rel="prefetch" href="/box-ui/assets/js/87.a42bb101.js"><link rel="prefetch" href="/box-ui/assets/js/88.81413fcf.js"><link rel="prefetch" href="/box-ui/assets/js/89.64db931f.js"><link rel="prefetch" href="/box-ui/assets/js/9.8505688c.js"><link rel="prefetch" href="/box-ui/assets/js/90.f61d532b.js"><link rel="prefetch" href="/box-ui/assets/js/91.b52ee503.js"><link rel="prefetch" href="/box-ui/assets/js/92.86264067.js"><link rel="prefetch" href="/box-ui/assets/js/93.35c300a3.js"><link rel="prefetch" href="/box-ui/assets/js/94.4f2716a5.js"><link rel="prefetch" href="/box-ui/assets/js/95.7d472367.js"><link rel="prefetch" href="/box-ui/assets/js/96.c2077a1e.js"><link rel="prefetch" href="/box-ui/assets/js/97.099ba019.js"><link rel="prefetch" href="/box-ui/assets/js/98.153f3731.js"><link rel="prefetch" href="/box-ui/assets/js/99.e2c23d90.js">
+    <link rel="stylesheet" href="/box-ui/assets/css/0.styles.06c0026d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/box-ui/" class="home-link router-link-active"><!----> <span class="site-name">BoxUI</span></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/box-ui/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/box-ui/doc/" class="nav-link">
+  介绍
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/doc/install.html" class="nav-link">
+  安装
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/doc/vip.html" class="nav-link">
+  会员须知
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/doc/upgrade.html" class="nav-link">
+  更新日志
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="组件" class="dropdown-title"><span class="title">组件</span> <span class="arrow down"></span></button> <button type="button" aria-label="组件" class="mobile-dropdown-title"><span class="title">组件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/box-ui/component/index.html" class="nav-link">
+  单组件
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/component/datagrid.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  数据表格
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/component/form.html" class="nav-link">
+  数据表单
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/component/sku.html" class="nav-link">
+  商品规格
+</a></li></ul></div></div><div class="nav-item"><a href="/box-ui/upgrade/" class="nav-link">
+  升级
+</a></div><div class="nav-item"><a href="/box-ui/auth/" class="nav-link">
+  授权
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生态" class="dropdown-title"><span class="title">生态</span> <span class="arrow down"></span></button> <button type="button" aria-label="生态" class="mobile-dropdown-title"><span class="title">生态</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/admin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  项目后台
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/bigdata" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  数据大屏
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/h5" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  小程序可视化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/datagrid" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  数据表格
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/form" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  动态表单
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/box-ui/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/box-ui/doc/" class="nav-link">
+  介绍
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/doc/install.html" class="nav-link">
+  安装
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/doc/vip.html" class="nav-link">
+  会员须知
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/doc/upgrade.html" class="nav-link">
+  更新日志
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="组件" class="dropdown-title"><span class="title">组件</span> <span class="arrow down"></span></button> <button type="button" aria-label="组件" class="mobile-dropdown-title"><span class="title">组件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/box-ui/component/index.html" class="nav-link">
+  单组件
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/component/datagrid.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  数据表格
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/component/form.html" class="nav-link">
+  数据表单
+</a></li><li class="dropdown-item"><!----> <a href="/box-ui/component/sku.html" class="nav-link">
+  商品规格
+</a></li></ul></div></div><div class="nav-item"><a href="/box-ui/upgrade/" class="nav-link">
+  升级
+</a></div><div class="nav-item"><a href="/box-ui/auth/" class="nav-link">
+  授权
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生态" class="dropdown-title"><span class="title">生态</span> <span class="arrow down"></span></button> <button type="button" aria-label="生态" class="mobile-dropdown-title"><span class="title">生态</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/admin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  项目后台
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/bigdata" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  数据大屏
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/h5" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  小程序可视化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/datagrid" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  数据表格
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://project.v5soft.com/form" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  动态表单
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>组件</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/box-ui/component/datagrid.html" aria-current="page" class="active sidebar-link">表格</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/box-ui/component/datagrid.html#例子" class="sidebar-link">例子</a></li><li class="sidebar-sub-header"><a href="/box-ui/component/datagrid.html#配置-option" class="sidebar-link">配置（Option）</a></li><li class="sidebar-sub-header"><a href="/box-ui/component/datagrid.html#配置-columns" class="sidebar-link">配置（columns）</a></li><li class="sidebar-sub-header"><a href="/box-ui/component/datagrid.html#方法-methods" class="sidebar-link">方法（Methods）</a></li><li class="sidebar-sub-header"><a href="/box-ui/component/datagrid.html#事件-events" class="sidebar-link">事件 (Events)</a></li></ul></li><li><a href="/box-ui/component/form.html" class="sidebar-link">表单</a></li><li><a href="/box-ui/component/sku.html" class="sidebar-link">SKU</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="数据表格"><a href="#数据表格" class="header-anchor">#</a> 数据表格</h1> <p>···
+针对 elementUI 进行二次封装。
+···</p> <h2 id="例子"><a href="#例子" class="header-anchor">#</a> 例子</h2> <h3 id="简单数据"><a href="#简单数据" class="header-anchor">#</a> 简单数据</h3> <p>::: demo</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>box-datagrid</span> <span class="token attr-name">:option</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>option<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onData<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>box-datagrid</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        option<span class="token operator">:</span> <span class="token punctuation">{</span>
+          columns<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              prop<span class="token operator">:</span> <span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;标题&quot;</span><span class="token punctuation">,</span>
+              option<span class="token operator">:</span> <span class="token punctuation">{</span>
+                rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    message<span class="token operator">:</span> <span class="token string">&quot;请输入名称&quot;</span><span class="token punctuation">,</span>
+                    trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题1&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题2&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题3&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题4&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题5&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题6&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题7&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题8&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题9&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题10&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题11&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">onData</span><span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> len <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> startIndex <span class="token operator">=</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>pageIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">+</span> page<span class="token punctuation">.</span>pageSize <span class="token operator">&gt;</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          data<span class="token operator">:</span> list<span class="token punctuation">,</span>
+          totalCount<span class="token operator">:</span> len<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>:::</p> <h3 id="远程数据"><a href="#远程数据" class="header-anchor">#</a> 远程数据</h3> <p>::: demo</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>box-datagrid</span> <span class="token attr-name">:option</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>option<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onData<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>box-datagrid</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        selection<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        index<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        option<span class="token operator">:</span> <span class="token punctuation">{</span>
+          columns<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              prop<span class="token operator">:</span> <span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;标题&quot;</span><span class="token punctuation">,</span>
+              option<span class="token operator">:</span> <span class="token punctuation">{</span>
+                rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    message<span class="token operator">:</span> <span class="token string">&quot;请输入名称&quot;</span><span class="token punctuation">,</span>
+                    trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题1&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题2&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题3&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题4&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题5&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题6&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题7&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题8&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题9&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题10&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题11&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">onData</span><span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> len <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> startIndex <span class="token operator">=</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>pageIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">+</span> page<span class="token punctuation">.</span>pageSize <span class="token operator">&gt;</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          data<span class="token operator">:</span> list<span class="token punctuation">,</span>
+          totalCount<span class="token operator">:</span> len<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>:::</p> <h3 id="搜索功能"><a href="#搜索功能" class="header-anchor">#</a> 搜索功能</h3> <p>::: demo</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>box-datagrid</span> <span class="token attr-name">:option</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>option<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onData<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>box-datagrid</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        option<span class="token operator">:</span> <span class="token punctuation">{</span>
+          columns<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              prop<span class="token operator">:</span> <span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;标题&quot;</span><span class="token punctuation">,</span>
+              option<span class="token operator">:</span> <span class="token punctuation">{</span>
+                rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    message<span class="token operator">:</span> <span class="token string">&quot;请输入名称&quot;</span><span class="token punctuation">,</span>
+                    trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              search<span class="token operator">:</span><span class="token boolean">true</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题1&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题2&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题3&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题4&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题5&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题6&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题7&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题8&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题9&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题10&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题11&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">onData</span><span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">let</span> len <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> startIndex <span class="token operator">=</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>pageIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">+</span> page<span class="token punctuation">.</span>pageSize <span class="token operator">&gt;</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          data<span class="token operator">:</span> list<span class="token punctuation">,</span>
+          totalCount<span class="token operator">:</span> len<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>:::</p> <h3 id="选择索引"><a href="#选择索引" class="header-anchor">#</a> 选择索引</h3> <p>::: demo</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>box-datagrid</span> <span class="token attr-name">:option</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>option<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onData<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>box-datagrid</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        option<span class="token operator">:</span> <span class="token punctuation">{</span>
+          selection<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          index<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          columns<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              prop<span class="token operator">:</span> <span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;标题&quot;</span><span class="token punctuation">,</span>
+              width<span class="token operator">:</span> <span class="token number">140</span><span class="token punctuation">,</span>
+              option<span class="token operator">:</span> <span class="token punctuation">{</span>
+                rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    message<span class="token operator">:</span> <span class="token string">&quot;请输入名称&quot;</span><span class="token punctuation">,</span>
+                    trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题1&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题2&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题3&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题4&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题5&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题6&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题7&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题8&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题9&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题10&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题11&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">onData</span><span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> len <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> startIndex <span class="token operator">=</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>pageIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">+</span> page<span class="token punctuation">.</span>pageSize <span class="token operator">&gt;</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          data<span class="token operator">:</span> list<span class="token punctuation">,</span>
+          totalCount<span class="token operator">:</span> len<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>:::</p> <h3 id="开启汇总"><a href="#开启汇总" class="header-anchor">#</a> 开启汇总</h3> <p>::: demo</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>box-datagrid</span> <span class="token attr-name">:option</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>option<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onData<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>box-datagrid</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        option<span class="token operator">:</span> <span class="token punctuation">{</span>
+          summary<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+          columns<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              prop<span class="token operator">:</span> <span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;标题&quot;</span><span class="token punctuation">,</span>
+              option<span class="token operator">:</span> <span class="token punctuation">{</span>
+                rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    message<span class="token operator">:</span> <span class="token string">&quot;请输入名称&quot;</span><span class="token punctuation">,</span>
+                    trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              prop<span class="token operator">:</span> <span class="token string">&quot;grade&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;成绩&quot;</span><span class="token punctuation">,</span>
+              width<span class="token operator">:</span> <span class="token number">140</span><span class="token punctuation">,</span>
+              option<span class="token operator">:</span> <span class="token punctuation">{</span>
+                rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    message<span class="token operator">:</span> <span class="token string">&quot;请输入成绩&quot;</span><span class="token punctuation">,</span>
+                    trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题1&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题2&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题3&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题4&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题5&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题6&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题7&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题8&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题9&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题10&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题11&quot;</span><span class="token punctuation">,</span>
+            grade<span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">onData</span><span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> len <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> startIndex <span class="token operator">=</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>pageIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">+</span> page<span class="token punctuation">.</span>pageSize <span class="token operator">&gt;</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          data<span class="token operator">:</span> list<span class="token punctuation">,</span>
+          totalCount<span class="token operator">:</span> len<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>:::</p> <h3 id="左树右表"><a href="#左树右表" class="header-anchor">#</a> 左树右表</h3> <p>::: demo</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>box-datagrid</span> <span class="token attr-name">:option</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>option<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onData<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>box-datagrid</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        option<span class="token operator">:</span> <span class="token punctuation">{</span>
+          selection<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          index<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          columns<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              prop<span class="token operator">:</span> <span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;标题&quot;</span><span class="token punctuation">,</span>
+              width<span class="token operator">:</span> <span class="token number">140</span><span class="token punctuation">,</span>
+              option<span class="token operator">:</span> <span class="token punctuation">{</span>
+                rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    message<span class="token operator">:</span> <span class="token string">&quot;请输入名称&quot;</span><span class="token punctuation">,</span>
+                    trigger<span class="token operator">:</span> <span class="token string">&quot;blur&quot;</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题1&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题2&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题3&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题4&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题5&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题6&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题7&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题8&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题9&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题10&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我是标题11&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">onData</span><span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> len <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> startIndex <span class="token operator">=</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>pageIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">;</span>
+        <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">+</span> page<span class="token punctuation">.</span>pageSize <span class="token operator">&gt;</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> page<span class="token punctuation">.</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          data<span class="token operator">:</span> list<span class="token punctuation">,</span>
+          totalCount<span class="token operator">:</span> len<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>:::</p> <h2 id="配置-option"><a href="#配置-option" class="header-anchor">#</a> 配置（Option）</h2> <p>针对配置的描述 依赖 XXX</p> <table><thead><tr><th>名称</th> <th>描述</th> <th>默认值</th></tr></thead> <tbody><tr><td>summary</td> <td>是否开始汇总</td> <td>false</td></tr> <tr><td>addText</td> <td>添加文本</td> <td>新增</td></tr> <tr><td>editText</td> <td>编辑文本</td> <td>编辑</td></tr> <tr><td>isAdd</td> <td>是否有添加</td> <td>true</td></tr> <tr><td>isEdit</td> <td>是否有编辑</td> <td>true</td></tr> <tr><td>isDel</td> <td>是否有删除</td> <td>false</td></tr> <tr><td>isRefresh</td> <td>是否有刷新</td> <td>false</td></tr> <tr><td>isExcel</td> <td>是否可以导出Excel</td> <td>false</td></tr> <tr><td>opWidth</td> <td>操作列宽</td> <td>false</td></tr> <tr><td>isOP</td> <td>是否有操作列</td> <td>false</td></tr> <tr><td>drawer</td> <td>是否为抽屉模式</td> <td>false</td></tr> <tr><td>selection</td> <td>选择</td> <td>false</td></tr> <tr><td>index</td> <td>编号</td> <td>false</td></tr> <tr><td>form</td> <td>自定义表单</td> <td>false</td></tr> <tr><td>OP</td> <td>操作列</td> <td>false</td></tr> <tr><td>data</td> <td>数据源</td> <td>默认[] 支持数组 远程</td></tr> <tr><td>toolBar</td> <td>工具条</td> <td>null</td></tr> <tr><td>columnChooser</td> <td>显示列</td> <td>[]</td></tr> <tr><td>export</td> <td>导出</td> <td>null</td></tr> <tr><td>columns</td> <td>列项</td> <td>[]</td></tr></tbody></table> <h2 id="配置-columns"><a href="#配置-columns" class="header-anchor">#</a> 配置（columns）</h2> <p>针对配置的描述 依赖 XXX</p> <table><thead><tr><th>名称</th> <th>描述</th> <th>默认值</th></tr></thead> <tbody><tr><td>type</td> <td>控件类型</td> <td>text 参考</td></tr> <tr><td>prop</td> <td>数据属性</td> <td></td></tr> <tr><td>label</td> <td>名称</td> <td>false</td></tr> <tr><td>width</td> <td>列宽</td> <td>false</td></tr> <tr><td>sortable</td> <td>是否可以排序</td> <td>false</td></tr> <tr><td>headerAlign</td> <td>列头对齐</td> <td>false</td></tr> <tr><td>align</td> <td>内容对齐</td> <td>false</td></tr> <tr><td>option</td> <td>组件选项</td> <td>{}</td></tr> <tr><td>search</td> <td>是否加入搜索</td> <td>false</td></tr></tbody></table> <h2 id="方法-methods"><a href="#方法-methods" class="header-anchor">#</a> 方法（Methods）</h2> <p>针对配置的描述 依赖 XXX</p> <table><thead><tr><th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>onSubmit</td> <td>提交</td></tr> <tr><td>onEdit</td> <td>编辑</td></tr> <tr><td>onDel</td> <td>删除</td></tr></tbody></table> <h2 id="事件-events"><a href="#事件-events" class="header-anchor">#</a> 事件 (Events)</h2> <p>针对配置的描述 依赖 XXX</p> <table><thead><tr><th>名称</th> <th>描述</th></tr></thead> <tbody><tr><td>onSubmit</td> <td>提交</td></tr> <tr><td>onEdit</td> <td>编辑</td></tr> <tr><td>onDel</td> <td>删除</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/box-ui/component/form.html">
+        表单
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/box-ui/assets/js/app.46ac42d8.js" defer></script><script src="/box-ui/assets/js/6.77e9e98c.js" defer></script><script src="/box-ui/assets/js/17.1fc873d6.js" defer></script>
+  </body>
+</html>
