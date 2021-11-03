@@ -16,19 +16,7 @@ vite2+element-ui+composition
 
 # 基于box-ui案例展示
 
-<a href="http://admin.v5soft.com" target="_blank">协作管理后台</a>
-
-<a href="http://bigdata.v5soft.com" target="_blank">大数据可视化</a>
-
-<a href="http://h5.v5soft.com" target="_blank">H5小程序可视化</a>
-
-<a href="http://datagrid.v5soft.com" target="_blank">数据表格配置</a>
-
-<a href="http://form.v5soft.com" target="_blank">动态表单可视化</a>
-
-<a href="http://panorama.v5soft.com" target="_blank">360全景可视化</a>
-
-<!-- [协作管理后台](http://admin.v5soft.com)
+[协作管理后台](http://admin.v5soft.com)
 
 [大数据可视化](http://bigdata.v5soft.com)
 
@@ -38,7 +26,7 @@ vite2+element-ui+composition
 
 [动态表单可视化](http://form.v5soft.com)
 
-[360全景可视化](http://panorama.v5soft.com) -->
+[360全景可视化](http://panorama.v5soft.com)
 
 # 安装
 ```

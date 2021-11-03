@@ -1,12 +1,11 @@
 <template>
   <div class="box-datagrid">
-    <div class="box-datagrid__search" v-if="currentSearch.visible">
-      <box-form-search
-        ref="mySearch"
-        :option="currentSearchOption"
-        @submit="onSearch"
-      ></box-form-search>
-    </div>
+    <box-form-search
+      ref="mySearch"
+      :option="currentSearchOption"
+      @submit="onSearch"
+      v-if="currentSearch.visible"
+    ></box-form-search>
     <div class="box-datagrid__toolbar" v-if="currentOption.toolbar.visible">
       <div class="box-datagrid__toolbar__left">
         <el-button
@@ -15,8 +14,7 @@
           size="small"
           @click="onNew"
           v-if="currentOption.hasAdd"
-          >{{ currentOption.addText }}</el-button
-        >
+        >{{ currentOption.addText }}</el-button>
         <slot name="toolbar_left"></slot>
         <!-- 动态组件 -->
         <div
@@ -24,11 +22,7 @@
           v-for="(item, index) in currentLeftItems"
           :key="index"
         >
-          <component
-            :is="getComponent(item.type)"
-            :option="item"
-            :data="item.data"
-          ></component>
+          <component :is="getComponent(item.type)" :option="item" :data="item.data"></component>
         </div>
       </div>
       <div class="box-datagrid__toolbar__right">
@@ -38,56 +32,23 @@
           v-for="(item, index) in currentRightItems"
           :key="index"
         >
-          <component
-            :is="getComponent(item.type)"
-            :option="item"
-            :data="item.data"
-          ></component>
+          <component :is="getComponent(item.type)" :option="item" :data="item.data"></component>
         </div>
-        <el-tooltip
-          placement="top"
-          effect="dark"
-          content="刷新"
-          v-if="currentOption.isRefresh"
-        >
-          <el-button
-            icon="el-icon-refresh"
-            size="small"
-            @click="onRefresh"
-          ></el-button>
+        <el-tooltip placement="top" effect="dark" content="刷新" v-if="currentOption.isRefresh">
+          <el-button icon="el-icon-refresh" size="small" @click="onRefresh"></el-button>
         </el-tooltip>
-        <el-tooltip
-          placement="top"
-          effect="dark"
-          content="导出Excel"
-          v-if="currentOption.isExcel"
-        >
+        <el-tooltip placement="top" effect="dark" content="导出Excel" v-if="currentOption.isExcel">
           <el-button icon="el-icon-download" size="small"></el-button>
         </el-tooltip>
 
         <el-tooltip effect="dark" :content="'搜索'" placement="top">
-          <el-button
-            size="mini"
-            circle
-            icon="el-icon-search"
-            @click="handleToggleSearch"
-          />
+          <el-button size="mini" circle icon="el-icon-search" @click="handleToggleSearch" />
         </el-tooltip>
         <el-tooltip effect="dark" content="刷新" placement="top">
-          <el-button
-            size="mini"
-            circle
-            icon="el-icon-refresh"
-            @click="handleDataRefresh"
-          />
+          <el-button size="mini" circle icon="el-icon-refresh" @click="handleDataRefresh" />
         </el-tooltip>
         <el-tooltip placement="top" effect="dark" content="导出Excel">
-          <el-button
-            icon="el-icon-download"
-            circle
-            size="small"
-            @click="handleExportData"
-          ></el-button>
+          <el-button icon="el-icon-download" circle size="small" @click="handleExportData"></el-button>
         </el-tooltip>
         <el-tooltip effect="dark" content="显隐列" placement="top">
           <el-popover placement="bottom-end" width="150" trigger="click">
@@ -97,22 +58,14 @@
               icon="el-icon-menu"
               slot="reference"
               style="margin-left: 10px"
-            >
-            </el-button>
-            <el-checkbox
-              v-model="allChecked"
-              @change="handleCheckedTableColumnsChangeAll"
-            >
-              全选
-            </el-checkbox>
+            ></el-button>
+            <el-checkbox v-model="allChecked" @change="handleCheckedTableColumnsChangeAll">全选</el-checkbox>
             <el-checkbox
               v-for="(item, index) in currentColumns"
               :key="index"
               v-model="item.hidden"
               @change="handleCheckedTableColumnsChange(item)"
-            >
-              {{ item.label }}
-            </el-checkbox>
+            >{{ item.label }}</el-checkbox>
           </el-popover>
         </el-tooltip>
         <slot name="toolbar_right"></slot>
@@ -135,8 +88,7 @@
         :page-size="currentOption.page.pageSize"
         :layout="currentOption.page.layout"
         :total="currentOption.page.total"
-      >
-      </el-pagination>
+      ></el-pagination>
     </div>
     <div class="box-datagrid__table">
       <el-table
@@ -150,19 +102,8 @@
         @row-dblclick="onRowDbClick"
         @selection-change="handleSelectionChange"
       >
-        <el-table-column
-          type="selection"
-          width="55"
-          v-if="currentOption.selection"
-        >
-        </el-table-column>
-        <el-table-column
-          type="index"
-          width="55"
-          label="编号"
-          v-if="currentOption.index"
-        >
-        </el-table-column>
+        <el-table-column type="selection" width="55" v-if="currentOption.selection"></el-table-column>
+        <el-table-column type="index" width="55" label="编号" v-if="currentOption.index"></el-table-column>
 
         <!-- 多级表头 不是很完美 后面找到再替换吧 -->
         <!-- <template v-for="(column, index) in currentColumns"> -->
@@ -211,7 +152,7 @@
                 </template>
               </el-table-column>
             </template>
-          </el-table-column> -->
+        </el-table-column>-->
         <el-table-column
           :key="index"
           :type="column.type"
@@ -241,9 +182,7 @@
               ></component>
             </template>
             <template v-else>
-              <box-html
-                :value="renderColumn(column, scope.row[column.prop], scope.row)"
-              ></box-html>
+              <box-html :value="renderColumn(column, scope.row[column.prop], scope.row)"></box-html>
             </template>
           </template>
         </el-table-column>
@@ -265,8 +204,7 @@
               icon="el-icon-edit"
               @click="onEdit(scope.row)"
               v-if="currentOption.isEdit"
-              >编辑</el-button
-            >
+            >编辑</el-button>
             <slot name="menu" :row="scope.row"></slot>
             <el-button
               type="danger"
@@ -274,8 +212,7 @@
               icon="el-icon-delete"
               @click="onDelete(scope.row)"
               v-if="currentOption.isDel"
-              >删除</el-button
-            >
+            >删除</el-button>
             <component
               :is="getComponent(item.type)"
               v-for="(item, index) in currentOption.columnOperate.items"
@@ -304,14 +241,12 @@
         :page-size="currentOption.page.pageSize"
         :layout="currentOption.page.layout"
         :total="currentOption.page.total"
-      >
-      </el-pagination>
+      ></el-pagination>
     </div>
     <box-dialog-form
       ref="myDialog"
       :option="{ drawer: currentOption.drawer, form: currentFormOption }"
-    >
-    </box-dialog-form>
+    ></box-dialog-form>
   </div>
 </template>
 <script lang="ts">
@@ -351,7 +286,7 @@ export default defineComponent({
       formData: {},
       selectItems: [],
       allChecked: false,
-      checkedItems:[]
+      checkedItems: []
     });
 
     const currentOption: any = computed(() => {
@@ -399,9 +334,9 @@ export default defineComponent({
         search: {
           visible: true,
         },
-        onSubmit: (ret: any) => {},
-        onEdit: (ret: any) => {},
-        onDel: (ret: any) => {},
+        onSubmit: (ret: any) => { },
+        onEdit: (ret: any) => { },
+        onDel: (ret: any) => { },
       };
 
       const defaultPage = {
@@ -477,7 +412,7 @@ export default defineComponent({
                 label: col.label,
                 prop: col.prop,
                 value: col.value || null,
-                format: (data: any) => {},
+                format: (data: any) => { },
               } || {}
             );
             let item = Object.assign(itemDeault, col.option || {});
@@ -492,7 +427,7 @@ export default defineComponent({
                   label: cc.label,
                   prop: cc.prop,
                   value: cc.value || null,
-                  format: (data: any) => {},
+                  format: (data: any) => { },
                 } || {}
               );
               let item = Object.assign(itemDeault, cc.option || {});
@@ -683,7 +618,7 @@ export default defineComponent({
           }
           context.emit("on-delete");
         })
-        .catch(() => {});
+        .catch(() => { });
     };
 
     //获取组件
@@ -709,7 +644,7 @@ export default defineComponent({
     };
 
     //导出数据
-    const handleExportData = function () {};
+    const handleExportData = function () { };
 
     //控制显示列
     const handleCheckedTableColumnsChange = function (item) {

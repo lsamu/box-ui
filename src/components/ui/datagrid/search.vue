@@ -1,5 +1,5 @@
 <template>
-  <div class="box-form-search">
+  <div class="box-form-search"  v-if="currentItems && currentItems.length>0">
     <el-form
       :inline="true"
       ref="form"
@@ -57,8 +57,8 @@ export default defineComponent({
     const that = root.proxy;
 
     const thatData = reactive({
-      formData: Object.assign({}, props.value || {}),
-      resetForm: Object.assign({}, props.value || {}),
+      formData: props.value||{},
+      resetForm: props.value||{},
     });
 
     watch(
@@ -237,5 +237,6 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .box-form-search {
+   padding: 5px;
 }
 </style>
